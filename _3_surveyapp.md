@@ -54,7 +54,7 @@
                     <h4>ฟอร์มสำหรับสำรวจที่พักอาศัย</h4>
                     <hr />
                     <!--  5 สร้างฟอร์มเก็บข้อมูล -->
-
+                
                 </div>
             </div>
         </div>
@@ -257,12 +257,12 @@ const api = require('./service/api');
 app.use(api);
 ```
 
-### ติดตั้ง multer
+##### ติดตั้ง multer
 ```cmd
  npm i --save multer
  npm i --save body-parser
 ```
-เพิ่ม body-parser ใน server.js
+##### เพิ่ม body-parser ใน server.js
 ```js
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -384,13 +384,13 @@ function getData() {
 
 ```
 
-### เรียกใช้งาน function
+### 20 เรียกใช้งาน function
 ```js
 loadMap()
 getData();
 ```
 
-### 20 สรา้ง selectMarker function
+### 21 สรา้ง selectMarker function
 ```js
 function selectMarker(e) {
     // console.log(e);
@@ -407,7 +407,7 @@ function selectMarker(e) {
 }
 ```
 
-### 21 สร้าง map on click
+### 22 สร้าง map on click
 ```js
 map.on('click', () => {
     $('form :input').val('');
