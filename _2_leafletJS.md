@@ -118,7 +118,7 @@ osm.addTo(map);
 thailand.addTo(map);
 ```
 
-### create map control
+### create layer control
 
 ```js
 var baseLayers = {
