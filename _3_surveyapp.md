@@ -43,19 +43,21 @@
 
 ```html
     <!-- 3 ออกแบบการแสดงผล -->
-    <div class="row">
-      <div class="col-sm-6">
-        <div id="map"></div>
-      </div>
-      <div class="col-sm-6">
-        <div class="dcard">
-          <h1 style="font-weight: bold">Building Survey</h1>
-          <h4>ฟอร์มสำหรับสำรวจที่พักอาศัย</h4>
-          <hr />
-          <!--  5 สร้างฟอร์มเก็บข้อมูล -->
-          
+    <div class="container mt">
+        <div class="row">
+            <div class="col-sm-6">
+                <div id="map"></div>
+            </div>
+            <div class="col-sm-6">
+                <div class="dcard">
+                    <h1 style="font-weight: bold">Building Survey</h1>
+                    <h4>ฟอร์มสำหรับสำรวจที่พักอาศัย</h4>
+                    <hr />
+                    <!--  5 สร้างฟอร์มเก็บข้อมูล -->
+
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 ```
 
