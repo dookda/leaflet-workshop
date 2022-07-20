@@ -67,8 +67,8 @@ body {
 ```html
           <form id="fieldForm" method="post" action="/api/insert" enctype="multipart/form-data">
             <div class="form-group">
-              <label for="place">ชื่อสถานที่</label>
-              <input type="text" class="form-control" id="splace" required>
+              <label for="sname">ชื่อสถานที่</label>
+              <input type="text" class="form-control" id="sname" required>
             </div>
             <div class="form-group">
               <label for="type">ประเภท:</label>
@@ -184,7 +184,7 @@ $('#fieldForm').submit(function (e) {
     e.preventDefault();
     $("#status").empty().text("File is uploading...");
     const obj = {
-        sname: $('#splace').val(),
+        sname: $('#sname').val(),
         stype: $('#stype').val(),
         sdesc: $('#sdesc').val(),
         geom: JSON.stringify(gps.toGeoJSON().geometry)
@@ -371,7 +371,7 @@ getData();
 ```js
 function selectMarker(e) {
     // console.log(e);
-    $('#splace').val(e.layer.feature.properties.sname);
+    $('#sname').val(e.layer.feature.properties.sname);
     $('#stype').val(e.layer.feature.properties.stype);
     $('#sdesc').val(e.layer.feature.properties.sdesc);
     $("#edit").attr("disabled", false);
@@ -398,7 +398,7 @@ map.on('click', () => {
 ```js
 function editData() {
     var data = {
-        sname: $('#splace').val(),
+        sname: $('#sname').val(),
         stype: $('#stype').val(),
         sdesc: $('#sdesc').val(),
         geom: pos.geom,
