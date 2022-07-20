@@ -95,9 +95,8 @@ for (var f = 0; f <= 5; f += 1) {
 ```js
 var user = new Object();
 let k = {};
+console.log(typeof user, typeof k);
 ```
-
-console.log(typeof (user), typeof (k));
 
 #### properties
 
