@@ -229,8 +229,9 @@ map.on('click', function (evt) {
         .then(response => response.text())
         .then(data => {
             let dat = JSON.parse(data);
-            addDataToCard(dat);
-            showEchart(dat);
+            // enable function
+            // addDataToCard(dat);
+            // showEchart(dat);
             if (dat.features.length > 0) {
                 console.log(dat.features);
                 L.popup()
