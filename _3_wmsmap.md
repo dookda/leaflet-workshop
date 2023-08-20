@@ -44,7 +44,7 @@
 <script src="./app.js"></script>
 ```
 
-### 3 add nav bar
+### 4 add nav bar
 ```html
      <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
@@ -89,7 +89,7 @@
     </nav>
 ```
 
-### 4 add div
+### 5 add div
 ```html
     <div class="container mt-3">
         <div class="row">
@@ -124,7 +124,28 @@
     </div>
 ```
 
-### 1 create map
+### 6 create css
+```css
+#map {
+    width: 100%;
+    height: 350px;
+    background-color: powderblue;
+}
+
+#feature-info {
+    width: 100%;
+    height: 350px;
+    background-color: powderblue;
+}
+
+#chart {
+    width: 100%;
+    height: 250px;
+    background-color: powderblue;
+}
+```
+
+### 7 create map
 ```js
 var map = L.map('map', {
     center: [16.949777781722553, 100.54530779528845],
@@ -132,14 +153,14 @@ var map = L.map('map', {
 });
 ```
 
-### 2 add tile layer: OSM
+### 8 add tile layer: OSM
 ```js
 var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?', {
     attribution: 'OSM'
 }).addTo(map);
 ```
 
-### 3 add tile layer:google maps
+### 9 add tile layer:google maps
 ```js
 var google_road = L.tileLayer("https://{s}.google.com/vt/lyrs=r&x={x}&y={y}&z={z}", {
     maxZoom: 20,
@@ -156,7 +177,7 @@ var googleHybridge = L.tileLayer("https://{s}.google.com/vt/lyrs=y,m&x={x}&y={y}
 });
 ```
 
-###  4 add wms layer
+### 10 add wms layer
 ```js
 var province = L.tileLayer.wms("https://ogc.mapedia.co.th/geoserver/webgis/wms?", {
     layers: "webgis:th_pro",
@@ -183,7 +204,7 @@ var tambon = L.tileLayer.wms("https://ogc.mapedia.co.th/geoserver/webgis/wms?", 
 });
 ```
 
-### 5 add control
+### 11 add control
 ```js
 var baseLayers = {
     "OSM": osm,
@@ -200,7 +221,7 @@ var overlays = {
 L.control.layers(baseLayers, overlays).addTo(map);
 ```
 
-### 6 add getfeatureinfo
+### 12 add getfeatureinfo
 ```js
 map.on('click', function (evt) {
     var url = getFeatureInfoFn(evt.latlng)
@@ -245,7 +266,7 @@ function getFeatureInfoFn(k) {
 }
 ```
 
-### 7 add data to card div
+### 13 add data to card div
 ```js
 function addDataToCard(dat) {
     document.getElementById('feature-info').innerHTML = ' <ul id="list"></ul>';
@@ -257,7 +278,7 @@ function addDataToCard(dat) {
 }
 ```
 
-### 8 add legend
+### 14 add legend
 ```js
 var legend_province = "https://ogc.mapedia.co.th/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=webgis:th_pro";
 var legend_amphoe = "https://ogc.mapedia.co.th/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=webgis:th_amp";
@@ -276,7 +297,7 @@ legend.onAdd = function (map) {
 legend.addTo(map);
 ```
 
-### 9 add EChart
+### 15 add EChart
 ```js
 function showEchart(dat) {
     let x2555 = dat.features.filter(i => i.id.includes('2555')).map(i => i.properties.rain);
